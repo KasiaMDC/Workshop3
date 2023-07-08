@@ -14,12 +14,13 @@
 <div><button> <a href="/user/list"> User's list </a></button></div>
 <br><br>
 <div>
-Add new User:
+Edit User:
 
-<form method="post" action="/user/add">
-    Nazwa: <input type="text" name="name">
-    Email: <input type="email" name="email">
-    Password: <input type="password" name="password">
+<form method="post" action="/user/edit">
+    <input value="${user.id}" name="id" type="hidden"/>
+    Nazwa: <input value="${user.name}" name="name" type="text"/>
+    Email: <input value="${user.email}"  name="email" type="email"/>
+    Password: <input type="password" name="password"/>
     <br>
     <button type="submit"> Save </button>
 </form>

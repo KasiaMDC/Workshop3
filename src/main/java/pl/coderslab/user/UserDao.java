@@ -30,11 +30,11 @@ public class UserDao {
     }
 
     private void loadDriver(){
-        try {
+        /*try {
             Class.forName("com.mysql.cj.jdbc.Driver");
         } catch (Exception e) {
             e.printStackTrace();
-        }
+        }*/
     }
 
     public void saveNewUserToDB(User user) {
@@ -76,17 +76,17 @@ public class UserDao {
         return user;
     }
 
-    public void updateUser(User user) {
+    public void updateUser(User user, int id) {
         loadDriver();
         try (Connection conn = DbUtil.getConnection()) {
             PreparedStatement ps = conn.prepareStatement(UPDATE_USER_QUERY);
-            ps.setString(1, user.getName());
-            ps.setString(2, user.getEmail());
+            ps.setString(1, user.getEmail());
+            ps.setString(2, user.getName());
             ps.setString(3, user.getPassword());
-            ps.setInt(4, user.getId());
+            ps.setInt(4, id);
             ps.executeUpdate();
         } catch (SQLException e) {
-            System.out.println("User couldn't be added");
+            System.out.println("User couldn't be edited");
             e.printStackTrace();
         }
     }

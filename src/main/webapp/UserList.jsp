@@ -19,7 +19,7 @@
 <br>
 <div>
 
-    <button> <a href="/user/add"> Dodaj uzytkownika </a></button>
+    <button> <a href="/user/add"> Add user </a></button>
 <br>
     <br>
 </div>
@@ -39,9 +39,9 @@
                     <td>${user.id}</td>
                     <td> ${user.name}</td> <td> ${user.email}</td>
                     <td>
-                        <a href="/user/delete">delete</a>
-                        <a href="/user/edit">edit</a>
-                        <a href="/user/show">show</a>
+                        <a href="/user/delete?id=${user.id}">delete</a>
+                        <a href="/user/edit?id=${user.id}">edit</a>
+                        <a href="/user/show?id=${user.id}">show</a>
                         </td>
                 </tr>
             </c:forEach>

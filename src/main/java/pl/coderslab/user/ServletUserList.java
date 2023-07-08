@@ -20,8 +20,6 @@ public class ServletUserList extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
-
         UserDao userDao = UserDao.getInstance();
         List<User> userList = userDao.findAll();
         req.setAttribute("userList",userList);
@@ -34,9 +32,5 @@ public class ServletUserList extends HttpServlet {
 //        }
 
         getServletContext().getRequestDispatcher("/UserList.jsp").forward(req,resp);
-
-
-
-
     }
 }
