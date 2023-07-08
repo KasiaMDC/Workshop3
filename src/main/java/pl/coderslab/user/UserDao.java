@@ -57,23 +57,23 @@ public class UserDao {
 
     public User read(int userId) {
         loadDriver();
-        User user = null;
         try (Connection conn = DbUtil.getConnection()) {
             PreparedStatement ps = conn.prepareStatement(READ_USER_QUERY_ID);
             ps.setInt(1, userId);
             ResultSet rs = ps.executeQuery();
             if (rs.next()) {
-                user = new User();
+                User user = new User();
                 user.setName(rs.getString("username"));
                 user.setEmail(rs.getString("email"));
                 user.setPassword(rs.getString("password"));
                 user.setId(userId);
+                return user;
             }
         } catch (SQLException e) {
             System.out.println("User couldn't be found");
             e.printStackTrace();
         }
-        return user;
+        return null;
     }
 
     public void updateUser(User user, int id) {
@@ -94,7 +94,7 @@ public class UserDao {
     public List<User> findAll() {
         loadDriver();
         List <User> result = new ArrayList<>();
-        try (Connection conn = DbUtil.connectDirectly()) {
+        try (Connection conn = DbUtil.getConnection()) {
             PreparedStatement ps = conn.prepareStatement(FIND_ALL_USER_QUERY);
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {

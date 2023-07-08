@@ -37,4 +37,9 @@ public class UserService {
         UserDao userDao = UserDao.getInstance();
         userDao.updateUser(user, id);
     }
+
+    public User showUser(int id){
+        UserDao userDao = UserDao.getInstance();
+        return userDao.read(id);
+    }
 }
