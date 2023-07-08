@@ -32,4 +32,9 @@ public class UserService {
         UserDao userDao = UserDao.getInstance();
         userDao.saveNewUserToDB(user);
     }
+
+    public void editUserInDatabase(User user, int id){
+        UserDao userDao = UserDao.getInstance();
+        userDao.updateUser(user, id);
+    }
 }
