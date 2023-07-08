@@ -21,11 +21,6 @@ public class ServletUserList extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
 
         UserDao userDao = UserDao.getInstance();
         List<User> userList = userDao.findAll();
