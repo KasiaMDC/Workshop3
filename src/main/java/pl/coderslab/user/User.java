@@ -6,6 +6,14 @@ public class User {
     private String email;
     private String password;
 
+    public User(String name, String email) {
+        this.name = name;
+        this.email = email;
+    }
+
+    public User() {
+    }
+
     public void setId(int id){
         this.id = id;
     }
@@ -36,5 +44,7 @@ public class User {
     public String getPassword(){
         return this.password;
     }
+
+
 
 }

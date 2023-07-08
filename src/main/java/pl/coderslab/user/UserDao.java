@@ -29,7 +29,16 @@ public class UserDao {
         return instance;
     }
 
+    private void loadDriver(){
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public void saveNewUserToDB(User user) {
+        loadDriver();
         try (Connection conn = DbUtil.getConnection()) {
             PreparedStatement ps = conn.prepareStatement(CREATE_USER_QUERY, Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, user.getEmail());
@@ -47,6 +56,7 @@ public class UserDao {
     }
 
     public User read(int userId) {
+        loadDriver();
         User user = null;
         try (Connection conn = DbUtil.getConnection()) {
             PreparedStatement ps = conn.prepareStatement(READ_USER_QUERY_ID);
@@ -67,6 +77,7 @@ public class UserDao {
     }
 
     public void updateUser(User user) {
+        loadDriver();
         try (Connection conn = DbUtil.getConnection()) {
             PreparedStatement ps = conn.prepareStatement(UPDATE_USER_QUERY);
             ps.setString(1, user.getName());
@@ -81,6 +92,7 @@ public class UserDao {
     }
 
     public List<User> findAll() {
+        loadDriver();
         List <User> result = new ArrayList<>();
         try (Connection conn = DbUtil.connectDirectly()) {
             PreparedStatement ps = conn.prepareStatement(FIND_ALL_USER_QUERY);
@@ -106,6 +118,7 @@ public class UserDao {
     }
 
     public void delete(int userId){
+        loadDriver();
         try (Connection conn = DbUtil.getConnection()) {
             PreparedStatement ps = conn.prepareStatement(DELETE_USER_QUERY);
             ps.setInt(1, userId);
