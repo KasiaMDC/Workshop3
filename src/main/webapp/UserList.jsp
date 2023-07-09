@@ -10,22 +10,25 @@
 
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/style_usersList.css">
     <title>User List</title>
 </head>
 <body>
 <header>
-    <h1>Users CRUD</h1>
+    <h1 class = "header">Users CRUD</h1>
 </header>
 <br>
-<div>
+<div class="inside">
 
-    <button> <a href="/user/add"> Add user </a></button>
+    <button class = "button1"> <a href="/user/add"> Dodaj uzytkownika </a></button>
 <br>
     <br>
-</div>
-<div>
-    <table>
-        <thead>
+
+    <table class="tab">
+        <thead class="th">
             <tr>
                 <th>id</th>
                 <th>User's name</th>
@@ -33,7 +36,7 @@
                 <th>Select</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody class="td">
             <c:forEach var="user" items="${userList}">
                 <tr>
                     <td>${user.id}</td>

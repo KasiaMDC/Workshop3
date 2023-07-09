@@ -42,4 +42,9 @@ public class UserService {
         UserDao userDao = UserDao.getInstance();
         return userDao.read(id);
     }
+
+    public void deleteUser(int id){
+        UserDao userDao = UserDao.getInstance();
+        userDao.delete(id);
+    }
 }

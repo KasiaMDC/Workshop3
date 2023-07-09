@@ -8,25 +8,40 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/css/style_usersList.css">
     <title> UsersCRUD</title>
 </head>
 <body>
-<p> User's details:</p>
+<header>
+    <h1 class = "header">Users CRUD</h1>
+</header>
+
+<div class="inside">
+    <div class="container">
+        <div class="left-section">
+            <p> User's details:</p>
+        </div>
+        <div class="right-section">
+            <button class = "button1"> <a href="/user/list"> Lista uzytkownikow </a></button>
+        </div>
+    </div>
 <br>
-<div>
-<button> <a href="/user/list"> User's list </a></button>
-</div>
-<div>
-    <table>
-        <tbody>
+
+
+
+    <table class="tab">
+        <tbody class="td">
             <tr>
-                <th> ID </th>
+                <th class="th"> ID </th>
                 <td>${user.id}</td></tr>
             <tr>
-                <th> User's name</th>
+                <th class="th"> Nazwa </th>
                 <td>${user.name}</td></tr>
             <tr>
-                <th> User's email</th>
+                <th class="th"> Email</th>
                 <td> ${user.email}</td>
             </tr>
         </tbody>
