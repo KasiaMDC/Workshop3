@@ -1,0 +1,66 @@
+body {
+    padding:20px;
+    font-family: sans-serif;
+    background-color: darkgoldenrod;
+}
+.header {
+    color: #885a35;
+    text-transform: uppercase;
+    margin-top: 0;
+    font-size: 3rem;
+}
+
+.inside {
+    background: #fff;
+    margin: 40px auto;
+    padding: 50px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+    color: #555;
+    border: 3px solid #885a35;
+    max-width: 800px;
+    line-height: 1.4em;
+}
+
+/* tutaj stylowanie */
+.tab {
+    width: 100%;
+   border-collapse: collapse;
+    font-family: sans-serif
+}
+.th {
+    border: 3px solid #885a35;
+    background-color: darkgoldenrod;
+    border-spacing: 20px;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.td{
+    border: 3px solid #885a35;
+    background-color: gainsboro;
+    border-spacing: 20px;
+    font-family: sans-serif;
+    text-align: center;
+}
+.button1 {
+    background-color: white;
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+    border: 3px solid #885a35;
+    right: 150px;
+    font-family: sans-serif
+}
+
+.container {
+    display: flex;
+     /* height: 100vh; Set the container height to full viewport height */
+}
+
+.left-section {
+    flex: 1; /* Take up 50% of the container width */
+}
+
+.right-section {
+    flex: 1; /* Take up 50% of the container width */
+}
